@@ -36,8 +36,8 @@ A RAG-based chatbot that can answer questions about your documentation using Lan
 4. Configure environment variables
 
     ```bash
-        cp .env.example .env
-        # Edit .env with your API keys
+    cp .env.example .env
+    # Edit .env with your API keys
     ```
 
 5. Place your documents in the `data/` directory
