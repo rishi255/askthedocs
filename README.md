@@ -1,65 +1,65 @@
 # AskTheDocs
 
-A RAG-based chatbot that can answer questions about your documents using LangGraph and Weaviate.
+A RAG-based chatbot that can answer questions about your documentation using LangGraph and Weaviate.
 
 ## Features
 
--   📄 Supports PDF and TXT documents
+-   📄 Supports PDF and TXT documents, with support for more formats on the way!
 -   🔍 Handles multi-column PDFs
 -   🤖 Interactive chat interface
 -   📚 Automatic document processing
 -   🔐 Secure API key management
+-   🔗 [future scope] Auto-scrape documentation from URL
 
-## Quick Start
+## Setup
 
-1. **Setup Environment**
+1. Clone the repository:
 
     ```bash
-    # Create and activate virtual environment
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-    # Install dependencies
-    pip install -r requirements.txt
-
-    # Configure environment variables
-    cp .env.example .env
-    # Edit .env with your API keys
+    git clone https://github.com/yourusername/askthedocs.git
+    cd askthedocs
     ```
 
-2. **Add Documents**
+2. Create and activate a virtual environment:
+
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. Configure environment variables
+
+    ```bash
+        cp .env.example .env
+        # Edit .env with your API keys
+    ```
+
+5. Place your documents in the `data/` directory
 
     - Place your PDF or TXT files in the `data/` directory
     - The system will automatically process them
 
-3. **Run the Chatbot**
+6. Run the chatbot:
+
     ```bash
     python rag_chatbot.py
     ```
 
-## Required API Keys
-
--   Weaviate API Key
--   Weaviate Cluster URL
--   HuggingFace API Key
--   OpenAI API Key (for future use)
+Type your questions and get answers based on your documentation! Type 'quit' to exit.
 
 ## Project Structure
 
 ```
 askthedocs/
-├── README.md               # This file
+├── README.md               # Project documentation
 ├── src/                    # Source code
 ├── data/                   # Document storage
 ├── .env.example           # Environment template
 └── requirements.txt       # Dependencies
 ```
-
-## Dependencies
-
--   langchain
--   langgraph
--   unstructured
--   sentence-transformers
--   weaviate-client
--   python-dotenv
