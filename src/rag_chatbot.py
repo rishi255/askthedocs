@@ -84,7 +84,7 @@ def get_loader(filepath: str):
 class DocumentLoader:
     """Handles document loading and processing into Weaviate."""
 
-    def __init__(self, collection_name: str = "DocumentChunk"):
+    def __init__(self, collection_name: str):
         self.collection_name = collection_name
         self.client = init_weaviate_client()
         self.embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
@@ -165,9 +165,10 @@ class DocumentLoader:
 
 
 class RAGChatbot:
-    def __init__(self, collection_name: str = "DocumentChunk"):
+    def __init__(self, collection_name: str, data_directory: str):
         self.collection_name = collection_name
         self.client = init_weaviate_client()
+        self.data_directory = data_directory
         self.embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
         self.llm = self._init_llm()
         self._ollama_client = None  # Store Ollama client reference
@@ -185,7 +186,7 @@ class RAGChatbot:
                 f"Collection {self.collection_name} does not exist. Loading documents..."
             )
             loader = DocumentLoader(self.collection_name)
-            loader.load_documents_from_directory("data")
+            loader.load_documents_from_directory(self.data_directory)
             loader.close()
         else:
             doc_count = get_document_count(self.client, self.collection_name)
@@ -314,7 +315,7 @@ class RAGChatbot:
 
 def main():
     """Main function to run the chatbot."""
-    chatbot = RAGChatbot()
+    chatbot = RAGChatbot(collection_name="DocumentChunk", data_directory="../data")
 
     # client.collections.delete("DocumentChunks")
 
