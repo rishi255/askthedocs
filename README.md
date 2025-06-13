@@ -1,6 +1,6 @@
 # AskTheDocs
 
-A smart, local-first RAG-based chatbot that answers your questions using only the documentation you provide. Built with LangGraph and Weaviate.
+A smart, local-first RAG-based chatbot that answers your questions about any technical documentation that you provide. Built with LangGraph and Weaviate.
 
 ## 🧠 Use Case
 
