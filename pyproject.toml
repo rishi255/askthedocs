@@ -1,0 +1,21 @@
+[project]
+name = "askthedocs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "langchain>=0.3.25",
+    "langchain-community>=0.3.25",
+    "langchain-huggingface>=0.3.0",
+    "langchain-ollama>=0.3.3",
+    "langchain-openai>=0.3.22",
+    "langchain-weaviate>=0.0.5",
+    "langgraph>=0.4.8",
+    "sentence-transformers>=4.1.0",
+    "unstructured[pdf]>=0.17.2",
+    "weaviate>=0.1.2",
+]
+
+[dependency-groups]
+dev = []
