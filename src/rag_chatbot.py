@@ -226,10 +226,12 @@ class RAGChatbot:
             raise ValueError("MODEL_PROVIDER environment variable is not set.")
 
         if model_type == "ollama":
-            self._ollama_client = ChatOllama(model="llama3.1:8b", temperature=0)
+            self._ollama_client = ChatOllama(
+                model=os.getenv("OLLAMA_MODEL_NAME"), temperature=0
+            )
             return self._ollama_client
         elif model_type == "openai":
-            return ChatOpenAI(model="gpt-4o-mini", temperature=0)
+            return ChatOpenAI(model=os.getenv("OPENAI_MODEL_NAME"), temperature=0)
 
     def create_graph(self) -> StateGraph:
         """Create the RAG workflow graph."""
