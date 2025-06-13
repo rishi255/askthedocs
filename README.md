@@ -24,8 +24,9 @@ This chatbot helps you:
 
 ## Features
 
--   📄 Drop PDF or TXT documentation into a folder — no config needed
--   🔍 Handles multi-column PDFs (technical docs supported well)
+-   ⚡ Quickly query your docs with natural language
+-   📄 Simply drop PDF or TXT documentation into a folder — no config needed
+-   🛠️ Process once, reuse anytime for efficient Q&A
 -   💬 Interactive command-line chat interface
 -   🧠 RAG pipeline powered by LangGraph and Weaviate
 -   🌐 \[Coming soon] Auto-scrape docs from URLs
@@ -66,6 +67,10 @@ This chatbot helps you:
 
     Place your `.pdf` or `.txt` files inside the `data/` directory.
     These will be automatically parsed and indexed for Q\&A.
+
+> [!TIP]
+> Keep your docs organized folder-wise for best results.  
+> eg. `data/flask_docs/flask-getting-started.pdf`, `data/django_docs/django-getting-started.pdf`
 
 6. **Run the chatbot**
 
